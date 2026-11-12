@@ -218,3 +218,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+.env
+config.yaml
+profile/cv.md
+data/
+output/
+logs/
