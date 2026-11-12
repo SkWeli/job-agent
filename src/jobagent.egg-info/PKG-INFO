@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: jobagent
+Version: 0.1.0
+Summary: AI job-search agent built with LangGraph and free LLMs
+Requires-Python: >=3.11
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: python-dotenv
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Dynamic: license-file

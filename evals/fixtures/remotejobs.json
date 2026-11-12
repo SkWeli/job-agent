@@ -1,0 +1,18 @@
+{"data": [
+  {"id": 1, "title": "Python Backend Engineer", "url": "https://remotejobs.org/j/1", "apply_url": "https://acme.example/careers/42",
+   "company": {"name": "Acme Analytics"}, "location": "Remote - APAC",
+   "applicant_location_requirements": "Asia-Pacific incl. Sri Lanka",
+   "description": "<p>We need a backend engineer with 1-3 years of Python, FastAPI and PostgreSQL. REST APIs, Docker, Git. Bonus: AWS.</p><p>Fully remote, APAC timezones. Salary USD 1,800-2,400/month.</p>",
+   "posted_at": "2099-01-01T00:00:00Z"},
+  {"id": 2, "title": "Python Developer", "url": "https://remotejobs.org/j/2", "apply_url": "https://usco.example/jobs/7",
+   "company": {"name": "US Health Co"}, "location": "Remote",
+   "applicant_location_requirements": "United States only (must be authorised to work in the US)",
+   "description": "<p>Python developer, 2+ years, Django. Must reside in the United States. No visa sponsorship.</p>",
+   "posted_at": "2099-01-01T00:00:00Z"},
+  {"id": 3, "title": "Senior Staff Engineer", "url": "https://remotejobs.org/j/3",
+   "company": {"name": "BigCorp"}, "location": "Remote", "description": "<p>15+ years. Go and Rust.</p>",
+   "posted_at": "2099-01-01T00:00:00Z"},
+  {"id": 4, "title": "Sales Development Representative", "url": "https://remotejobs.org/j/4",
+   "company": {"name": "SellFast"}, "location": "Remote", "description": "<p>Cold calling, quota.</p>",
+   "posted_at": "2099-01-01T00:00:00Z"}
+]}

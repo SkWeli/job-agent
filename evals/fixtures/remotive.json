@@ -1,0 +1,12 @@
+{"jobs": [
+  {"title": "Python Backend Engineer", "company_name": "Acme Analytics", "url": "https://remotive.com/x/1",
+   "candidate_required_location": "Remote - APAC", "description": "Duplicate of the remotejobs listing.",
+   "publication_date": "2099-01-01T00:00:00"},
+  {"title": "Junior Data Engineer", "company_name": "Lanka Data Labs", "url": "https://remotive.com/x/2",
+   "candidate_required_location": "Worldwide",
+   "description": "<p>Entry-level data engineer. Python and SQL required; Airflow and Spark are a plus. 0-2 years. Anywhere in the world.</p>",
+   "publication_date": "2099-01-01T00:00:00"},
+  {"title": "Data Engineer", "company_name": "OldCo", "url": "https://remotive.com/x/3",
+   "candidate_required_location": "Worldwide", "description": "Python, Spark.",
+   "publication_date": "2020-01-01T00:00:00"}
+]}

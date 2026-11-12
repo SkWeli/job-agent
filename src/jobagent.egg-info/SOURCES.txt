@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/jobagent/__init__.py
+src/jobagent.egg-info/PKG-INFO
+src/jobagent.egg-info/SOURCES.txt
+src/jobagent.egg-info/dependency_links.txt
+src/jobagent.egg-info/requires.txt
+src/jobagent.egg-info/top_level.txt
+tests/test_smoke.py

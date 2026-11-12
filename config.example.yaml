@@ -1,0 +1,79 @@
+# Copy to config.yaml and edit. Everything here is free.
+cv_path: profile/cv.md                 # your real CV in Markdown/plain text: the only source of facts
+
+candidate:
+  name: Your Name
+
+preferences: |
+  Lives in Colombo, Sri Lanka. Sri Lankan citizen, no work visa elsewhere.
+  Wants: junior-to-mid Python backend or data engineering roles. On-site/hybrid in Colombo, or fully remote
+  roles that accept applicants in Sri Lanka / Asia.
+  Not interested in: sales, unpaid internships, commission-only.
+  Salary: at least LKR 250,000/month locally, or USD 1,500/month remote.
+
+searches:
+  - {query: python developer, locations: [Colombo, Sri Lanka]}
+  - {query: software engineer, locations: [Colombo]}
+  - {query: python, remote: true}
+  - {query: data engineer, remote: true}
+
+# Free deterministic rules, applied inside search_jobs before the model sees anything.
+filters:
+  exclude_titles: [senior staff, principal, director, head of, sales, unpaid]
+  locations_any: [sri lanka, colombo, remote, anywhere, worldwide, asia, apac]
+
+# ---- The model (pick ONE; all free) ------------------------------------------------------------
+llm:
+  provider: groq                       # free cloud tier, no card: https://console.groq.com  (GROQ_API_KEY)
+  model: llama-3.3-70b-versatile
+  requests_per_minute: 20              # stay under the free-tier limit
+  temperature: 0
+  # draft_model: openai/gpt-oss-120b   # optional: a different model for writing CVs
+
+# llm:                                 # fully local and private, no limits. Needs ~8 GB RAM (16 GB better)
+#   provider: ollama                   # install https://ollama.com, then: ollama pull qwen3:8b
+#   model: qwen3:8b                    # bigger machine: qwen3.6:27b ; small machine: gemma4:e4b
+#   num_ctx: 32768
+#   requests_per_minute: null
+
+# llm:                                 # Gemini free tier (tighter daily limits; free-tier data may train Google models)
+#   provider: google_genai             # key: https://aistudio.google.com  (GOOGLE_API_KEY)
+#   model: gemini-3.5-flash
+#   requests_per_minute: 5
+
+# ---- Guardrails --------------------------------------------------------------------------------
+limits:
+  max_steps: 40                 # model calls per run, then wrap up
+  max_tool_calls: 80
+  max_same_call: 2              # identical call allowed twice, then blocked (loop guard)
+  max_consecutive_errors: 4
+  max_drafts_per_run: 3
+  min_score_to_draft: 4
+  revision_rounds: 2            # tailoring: fix-and-recheck loops for CV + letter
+  max_context_messages: 40      # then old messages get summarised
+  keep_recent_messages: 14
+  tool_result_chars: 4000
+  max_age_days: 21
+
+cover_letter_words: [220, 320]
+
+approval_required: [send_application_email]   # these tools pause for a human yes/no every time
+
+# Optional: lets the agent email applications (after your approval). Gmail: use an App Password.
+# Without this, approved emails are saved as .eml files for you to send yourself.
+email:
+  # smtp_host: smtp.gmail.com
+  # smtp_port: 465
+  # from: you@gmail.com
+  # password comes from the SMTP_PASSWORD env var
+
+# ---- Job feeds -----------------------------------------------------------------------------------
+sources:
+  remotejobs: {enabled: true}          # remote, no key
+  remotive: {enabled: true}            # remote, no key, poll a few times a day at most
+  jooble: {enabled: false}             # local incl. Sri Lanka. Free key (JOOBLE_API_KEY): jooble.org/api/about
+  greenhouse: {companies: []}          # watch-list: boards.greenhouse.io/<token>
+  lever: {companies: []}               # watch-list: jobs.lever.co/<slug>
+
+data_dir: data        # jobs.db (tracker), notes.md (memory), checkpoints.db (resume/approvals)
+output_dir: output    # drafts + reports
