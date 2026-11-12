@@ -1,0 +1,1 @@
+"""jobagent: an AI job-search agent built with LangGraph and free LLMs."""
